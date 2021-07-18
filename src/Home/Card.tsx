@@ -41,4 +41,8 @@ const Image = styled.img`
   width: 300px;
   border-radius: 8px;
   box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 400px) {
+    width: 285px;
+  }
 `;
