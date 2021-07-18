@@ -34,8 +34,11 @@ export const HomePage = () => {
       {messageTransition((style, item) => (
         <Minted style={style}>{item}</Minted>
       ))}
-      <Credits href="https://github.com/junhoyeo/pride-stimulus">
-        GitHub@junhoyeo
+      <Credits
+        href="https://github.com/junhoyeo/pride-stimulus"
+        target="_blank"
+      >
+        GitHub
       </Credits>
     </Container>
   );
