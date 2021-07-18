@@ -3369,6 +3369,11 @@ typescript@^4.3.4:
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
   integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
 
+uck@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/uck/-/uck-1.0.1.tgz#a620f0c3b40cf5e592d640486693214229343ed1"
+  integrity sha512-DyeFsMAViRtVadrzUtuoMU5VpM5tTuqklXSbZcttN/zy90LWCFi682dhWdu8yvUauXTzuKIvvbjZFZ+N7s1gGg==
+
 unbox-primitive@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/unbox-primitive/-/unbox-primitive-1.0.1.tgz#085e215625ec3162574dc8859abee78a59b14471"
