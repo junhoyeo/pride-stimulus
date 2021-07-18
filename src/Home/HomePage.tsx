@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { animated, useTransition } from 'react-spring';
 import styled from 'styled-components';
 import { convert } from 'uck';
 
@@ -16,10 +17,23 @@ export const HomePage = () => {
     return `${convert(',$.3s', STIMULUS * clicks)}을 찍어내셨네요.`;
   }, [clicks]);
 
+  const messageTransition = useTransition(message, {
+    from: {
+      opacity: 0,
+      transform: 'translateY(-24px)',
+    },
+    enter: {
+      opacity: 1,
+      transform: 'translateY(0px)',
+    },
+  });
+
   return (
     <Container>
       <Card onClick={updateClicks} />
-      <Minted>{message}</Minted>
+      {messageTransition((style, item) => (
+        <Minted style={style}>{item}</Minted>
+      ))}
       <Credits href="https://github.com/junhoyeo/pride-stimulus">
         GitHub@junhoyeo
       </Credits>
@@ -38,7 +52,7 @@ const Container = styled.div`
   background-size: cover;
 `;
 
-const Minted = styled.span`
+const Minted = styled(animated.span)`
   margin-top: 16px;
   font-size: 1.2rem;
   font-weight: 800;
