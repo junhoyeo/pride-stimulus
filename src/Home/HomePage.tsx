@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
+import { convert } from 'uck';
 
 import { Card } from './Card';
 import { useCount } from './useCount';
 
+const STIMULUS = 25 * 10000;
+
 export const HomePage = () => {
   const [clicks, updateClicks] = useCount();
+  const message = useMemo(() => {
+    if (!clicks) {
+      return '인증서를 눌러 돈을 찍어 보세요.';
+    }
+    return `${convert(',$.3s', STIMULUS * clicks)}을 찍어내셨네요.`;
+  }, [clicks]);
 
   return (
     <Container>
       <Card onClick={updateClicks} />
-      <Minted>{clicks.toLocaleString('ko')}번 돈을 찍어내셨네요.</Minted>
+      <Minted>{message}</Minted>
       <Credits href="https://github.com/junhoyeo/pride-stimulus">
         GitHub@junhoyeo
       </Credits>
