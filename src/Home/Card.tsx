@@ -1,22 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import JSConfetti from 'js-confetti';
 import styled from 'styled-components';
 
 export const Card = () => {
-  useEffect(() => {
-    const jsConfetti = new JSConfetti();
+  const confetti = useRef<JSConfetti | null>(null);
 
-    jsConfetti.addConfetti({
+  const popEmoji = () =>
+    confetti.current?.addConfetti({
       emojis: ['💸', '🇰🇷'],
       // @ts-ignore
       emojiSize: 256,
       confettiNumber: 30,
       confettiRadius: 6,
     });
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      confetti.current = new JSConfetti();
+      popEmoji();
+    }
   }, []);
 
   return (
-    <Container>
+    <Container onClick={popEmoji}>
       <Image src="/images/card.svg" />
     </Container>
   );
