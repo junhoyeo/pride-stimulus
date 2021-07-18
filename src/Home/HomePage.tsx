@@ -32,12 +32,18 @@ const Container = styled.div`
 const Minted = styled.span`
   margin-top: 16px;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 800;
   color: rgba(33, 37, 41, 0.85);
+  background: linear-gradient(to right, #102a67, #1a2b56, #001030);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 16px rgba(71, 110, 251, 0.75);
 `;
 
 const Credits = styled.a`
   margin-top: 8px;
   font-weight: bold;
   font-size: 0.98rem;
+  color: rgba(33, 37, 41, 0.85);
 `;
