@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Card } from './Card';
+import { useCount } from './useCount';
 
 export const HomePage = () => {
+  const [clicks, updateClicks] = useCount();
+
   return (
     <Container>
-      <Card />
+      <Card onClick={updateClicks} />
+      {clicks}
     </Container>
   );
 };

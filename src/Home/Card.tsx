@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import JSConfetti from 'js-confetti';
 import styled from 'styled-components';
 
-export const Card = () => {
+type CardProps = {
+  onClick?: () => void;
+};
+export const Card: React.FC<CardProps> = ({ onClick }) => {
   const confetti = useRef<JSConfetti | null>(null);
 
   const popEmoji = () =>
@@ -21,8 +24,13 @@ export const Card = () => {
     }
   }, []);
 
+  const onClickCard = useCallback(() => {
+    popEmoji();
+    onClick();
+  }, [onClick]);
+
   return (
-    <Container onClick={popEmoji}>
+    <Container onClick={onClickCard}>
       <Image src="/images/card.svg" />
     </Container>
   );
