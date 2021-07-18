@@ -7,7 +7,7 @@ export const Card = () => {
 
   const popEmoji = () =>
     confetti.current?.addConfetti({
-      emojis: ['💸', '🇰🇷'],
+      emojis: ['🇰🇷', '💸', '💵', '💖'],
       // @ts-ignore
       emojiSize: 256,
       confettiNumber: 30,
