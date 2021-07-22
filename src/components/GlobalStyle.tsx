@@ -7,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     word-break: keep-all;
+    font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+      'Helvetica Neue', Roboto, Helvetica,
+      'Apple SD Gothic Neo', 'Noboto Neue', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
     user-select: none;
     -webkit-user-drag: none;
   }
